@@ -2,13 +2,12 @@
 
 See it live at https://convex-clerk-users-table.vercel.app/
 
-This example demonstrates how to add authentication and user settings to a basic chat
-app. It uses [Clerk](https://clerk.dev/) for authentication.
+This example demonstrates authentication and user settings on a basic chat app
+with [Clerk](https://clerk.dev/).
 
-Users are initially presented with a "Log In" button. After users log in, their
-information is persisted to a `users` table. When users send messages, each
-message is associated with the user that sent it. Users can change the color their
-own messages are rendered in.
+Clerk webhooks are used to keep a users table updated, providing live updates on
+user information; try changing one of your users' names in your Clerk dashboard
+and watch up update live in the app.
 
 ## Running the App
 
@@ -23,8 +22,7 @@ Additionally save your Clerk credentials in the .env file:
 VITE_CLERK_PUBLISHABLE_KEY="<your publishable key>"
 ```
 
-Next, from the Webhooks section of your Clerk instance dashboard, create an
-endpoint.
+Next create an endpoint in the Webhooks section of your Clerk instance dashboard.
 
 Set the url to something like this (replace ardent-mammoth-732 with your own)
 https://ardent-mammoth-732.convex.site/clerk-users-webhook
@@ -37,3 +35,4 @@ settings for your instance.
 
 When a user signs up you should see logs from the HTTP handler
 as well as a new row in the users table in the Convex dashboard.
+
