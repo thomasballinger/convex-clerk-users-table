@@ -45,7 +45,7 @@ export const currentUser = query((ctx: QueryCtx) => getCurrentUser(ctx));
 /** Get user by Clerk use id (AKA "subject" on auth)  */
 export const getUser = internalQuery({
   args: { subject: v.string() },
-  async handler(ctx, args): Promise<Doc<"users"> | null> {
+  async handler(ctx, args) {
     return await userQuery(ctx, args.subject);
   },
 });

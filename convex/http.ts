@@ -24,7 +24,6 @@ const handleClerkWebhook = httpAction(async (ctx, request) => {
   switch (event.type) {
     case "user.created": // intentional fallthrough
     case "user.updated": {
-      event.data.last_name;
       const existingUser = await ctx.runQuery(internal.users.getUser, {
         subject: event.data.id,
       });

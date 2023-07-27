@@ -13,8 +13,14 @@ and watch up update live in the app.
 
 Because this app uses authentication, it requires a bit of an additional setup.
 
-Follow these instructions https://docs.convex.dev/auth/clerk to set up Clerk with
-Convex.
+Follow steps 1-4 of the instructions at https://docs.convex.dev/auth/clerk to set up Clerk with Convex.
+
+As part of this process you will:
+
+- create a Clerk account
+- configure a JWT token
+- change the domain property in convex/auth.config.js to the issuer URL from Cler
+- change the publishableKey prop of the ClerkProvider component in main.tsx to the publishable key for your Clerk project.
 
 Additionally save your Clerk credentials in the .env file:
 
@@ -35,4 +41,3 @@ settings for your instance.
 
 When a user signs up you should see logs from the HTTP handler
 as well as a new row in the users table in the Convex dashboard.
-
