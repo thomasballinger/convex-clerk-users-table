@@ -85,7 +85,7 @@ export const setColor = mutation({
   args: { color: v.string() },
   handler: async (ctx, { color }) => {
     const user = await mustGetCurrentUser(ctx);
-    ctx.db.patch(user._id, { color });
+    await ctx.db.patch(user._id, { color });
   },
 });
 
