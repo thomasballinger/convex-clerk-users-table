@@ -39,7 +39,7 @@ ReactDOM.render(
       // Replace this with your Clerk Publishable Key
       // or with `{import.meta.env.VITE_CLERK_PUBLISHABLE_KEY}`
       // and configure VITE_CLERK_PUBLISHABLE_KEY in your .env.local
-      publishableKey="pk_test_YnVyc3RpbmctY2ljYWRhLTMyLmNsZXJrLmFjY291bnRzLmRldiQ"
+      publishableKey="pk_test_c3Ryb25nLWhvcm5ldC03LmNsZXJrLmFjY291bnRzLmRldiQ"
     >
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
         {/* Authenticated is for having a JWT token from Clerk */}
