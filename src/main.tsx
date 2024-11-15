@@ -24,6 +24,7 @@ function WaitForClerkUserData(props: {
     "Loading",
     null,
   ];
+  console.log({ loginStatus });
 
   // used for the side effect of keeping the current user loaded
   useQuery(api.users.currentUser);
