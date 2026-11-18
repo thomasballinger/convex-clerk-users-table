@@ -1,5 +1,5 @@
 import { ReactNode, StrictMode } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import LoginPage from "./LoginPage";
@@ -34,7 +34,7 @@ function WaitForClerkUserData(props: {
   return props.children;
 }
 
-ReactDOM.render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ClerkProvider
       // Replace this with your Clerk Publishable Key
@@ -55,6 +55,5 @@ ReactDOM.render(
         </Unauthenticated>
       </ConvexProviderWithClerk>
     </ClerkProvider>
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );
